@@ -7,8 +7,8 @@ from time import strftime
  
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
-// Falta leer de serial Arduino (USB)
-//temp_sensor = '/sys/bus/w1/devices/28-00000622fd44/w1_slave'
+# Falta leer de serial Arduino (USB)
+# temp_sensor = '/sys/bus/w1/devices/28-00000622fd44/w1_slave'
  
 # Variables for MySQL
 db = MySQLdb.connect(host="localhost", user="root", passwd="password", db="nombre_base_datos")
