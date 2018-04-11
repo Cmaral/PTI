@@ -18,7 +18,7 @@ int luz = 0;
 DHT dht(DHTPIN, DHTTYPE);
 
 // Variables sensor de lluvia
-int rainSensor = A0;
+int pinLluvia = A0;
 const int sensorMin = 0;     // sensor min
 const int sensorMax = 1024; // sensor max
  
@@ -64,7 +64,7 @@ void loop() {
   Serial.print("\n");
  
  // Lluvia
-  int sensorVal = analogRead(rainSensor);
+  int sensorVal = analogRead(pinLluvia);
   int range = map(sensorVal, sensorMin, sensorMax, 0, 3); 
   int value = map(sensorVal, sensorMin, sensorMax, 100, 0);
   
