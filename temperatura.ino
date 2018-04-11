@@ -1,6 +1,5 @@
 #include <DHT.h>
  
-
 #define DHTPIN 2
 #define DHTTYPE DHT11
 int i = 0;
@@ -9,8 +8,7 @@ DHT dht(DHTPIN, DHTTYPE);
  
 void setup() {
   Serial.begin(9600);
-  dht.begin();
- 
+  dht.begin(); 
 }
  
 void loop() {
