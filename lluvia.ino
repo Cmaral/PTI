@@ -8,23 +8,24 @@ void setup() {
 
 void loop() {
   int sensorVal = analogRead(rainSensor);
-  int range = map(sensorVal, sensorMin, sensorMax, 0, 3); // map the sensor range (four options)
+  int range = map(sensorVal, sensorMin, sensorMax, 0, 3); 
   int value = map(sensorVal, sensorMin, sensorMax, 100, 0);
- switch (range) { // range value
+  
+ switch (range) { 
   case 0:    // Sensor getting wet
-   Serial.println("Flood");
+   Serial.println("Lluvia fuerte");
    Serial.print("Cantidad de lluvia: ");
    Serial.print(value,DEC);
    Serial.println("%");
    break;
   case 1:    // Sensor getting wet
-   Serial.println("Rain Warning");
+   Serial.println("Lluvia suave");
    Serial.print("Cantidad de lluvia: ");
    Serial.print(value,DEC);
    Serial.println("%");
    break;
   case 2:    
-   Serial.println("Not Raining");
+   Serial.println("No llueve");
    Serial.print("Cantidad de lluvia: ");
    Serial.print(value,DEC);
    Serial.println("%");
