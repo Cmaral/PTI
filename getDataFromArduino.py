@@ -1,13 +1,13 @@
 
 import serial
 
-s = serial.Serial('/dev/ttyUSB0',9600)
+s = serial.Serial('/dev/ttyACM0',9600)
 serialData = []
 
 while True:
     data = s.readline()   
     if data:                
-        serialData.append(data)
+        serialData.append(da
     if len(serialData) == 4:        
         print s             
         s = []              
