@@ -7,7 +7,7 @@ serialData = []
 while True:
     data = s.readline()   
     if data:                
-        serialData.append(da
+        serialData.append(data)
     if len(serialData) == 4:        
         print s             
         s = []              
