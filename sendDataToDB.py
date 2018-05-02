@@ -5,6 +5,17 @@ import glob
 import MySQLdb
 from time import strftime
  
+ 
+host="tutorial-db-instance.cy5t8ba5c4ju.us-west-2.rds.amazonaws.com"
+port=3306
+dbname="meteo"
+user="pti20"
+password="pti20pti20"
+my_db=src_mysql(dbname=dbname,host=host,port=port,user=user,password=password)
+
+////////////////////////////
+ 
+ 
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
 # Falta leer de serial Arduino (USB)
