@@ -1,7 +1,7 @@
 <?php
     // config.php
     // Credenciales
-    $dbhost = "tutorial-db-instance.cy5t8ba5c4ju.us-west-2.rds.amazonaws.com";
+    $dbhost = "18.237.97.76";
     $dbuser = "pti20";
     $dbpass = "pti20pti20";
     $dbname = "meteo";
