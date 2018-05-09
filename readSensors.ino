@@ -1,4 +1,4 @@
- #include <DHT.h>
+#include <DHT.h>
  
 // Variables sensor de humedad y temperatura
 #define DHTPIN 2
@@ -30,13 +30,12 @@ void setup() {
 }
  
 void loop() {
+  delay(2000);
  
  // Luz
   value = analogRead(pinLuz);                
   luz = map(value, 1023, 0, 0, 100);
-  Serial.print("Intensidad de luz: ");
-  Serial.print(luz, DEC);
-  Serial.println("%");
+  Serial.println(luz, DEC);
  
  
  // Temperatura y humedad
@@ -51,43 +50,19 @@ void loop() {
  
   hif = dht.computeHeatIndex(f, h);
   hic = dht.computeHeatIndex(t, h, false);
- 
-  Serial.print("Humedad: ");
-  Serial.print(h);
-  Serial.print(" %\t");
-  Serial.print("Temperatura: ");
-  Serial.print(t);
-  Serial.print("°C     ");
-  Serial.print("Índice de calor: ");
-  Serial.print(hic);
-  Serial.print("°C");
-  Serial.print("\n");
+  // Humedad
+  Serial.println(h);
+  // Temperatura
+  Serial.println(t);
+  // Indice de calor
+  Serial.println(hic);
  
  // Lluvia
   int sensorVal = analogRead(pinLluvia);
   int range = map(sensorVal, sensorMin, sensorMax, 0, 3); 
   int value = map(sensorVal, sensorMin, sensorMax, 100, 0);
-  
- switch (range) { 
-  case 0:    // Sensor getting wet
-   Serial.println("Lluvia fuerte");
-   Serial.print("Cantidad de lluvia: ");
-   Serial.print(value,DEC);
-   Serial.println("%");
-   break;
-  case 1:    // Sensor getting wet
-   Serial.println("Lluvia suave");
-   Serial.print("Cantidad de lluvia: ");
-   Serial.print(value,DEC);
-   Serial.println("%");
-   break;
-  case 2:    
-   Serial.println("No llueve");
-   Serial.print("Cantidad de lluvia: ");
-   Serial.print(value,DEC);
-   Serial.println("%");
-   break;
- }  
-  
+
+  Serial.println(value,DEC);
+
  
 }
