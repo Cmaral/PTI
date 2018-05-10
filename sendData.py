@@ -10,14 +10,14 @@ while True:
     if data:                
         serialData.append(data)
     if len(serialData) == 1: # Luz
-        os.system("php /home/claudia/Desktop/envio_luz.php %s"%(data))
+        os.system("php /Desktop/envio_luz.php %s"%(data))
     if len(serialData) == 2: # Humedad
-        os.system("php /home/claudia/Desktop/envio_humedad.php %s"%(data))
+        os.system("php /Desktop/envio_humedad.php %s"%(data))
     if len(serialData) == 3: # Temperatura
-        os.system("php /home/claudia/Desktop/envio_temperatura.php %s"%(data))
+        os.system("php /Desktop/envio_temperatura.php %s"%(data))
     if len(serialData) == 4: # Indice de calor
-        os.system("php /home/claudia/Desktop/envio_calor.php %s"%(data))
-    if len(serialData) == 5:        
-        os.system("php /home/claudia/Desktop/envio_lluvia.php %s"%(data))
+        os.system("php /Desktop/envio_calor.php %s"%(data))
+    if len(serialData) == 5: # Lluvia       
+        os.system("php /Desktop/envio_lluvia.php %s"%(data))
         print s             
         serialData = [] 
