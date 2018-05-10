@@ -30,12 +30,13 @@ void setup() {
 }
  
 void loop() {
-  delay(2000);
+
+  delay(100000);
  
  // Luz
   value = analogRead(pinLuz);                
   luz = map(value, 1023, 0, 0, 100);
-  Serial.println(luz, DEC);
+  
  
  
  // Temperatura y humedad
@@ -50,19 +51,29 @@ void loop() {
  
   hif = dht.computeHeatIndex(f, h);
   hic = dht.computeHeatIndex(t, h, false);
-  // Humedad
-  Serial.println(h);
-  // Temperatura
-  Serial.println(t);
-  // Indice de calor
-  Serial.println(hic);
- 
+  
  // Lluvia
   int sensorVal = analogRead(pinLluvia);
   int range = map(sensorVal, sensorMin, sensorMax, 0, 3); 
   int value = map(sensorVal, sensorMin, sensorMax, 100, 0);
 
+  t=t-3;
+  hic = hic-3;
+  // Luz
+  Serial.println(luz, DEC);
+  delay(1000);
+  // Humedad
+  Serial.println(h);
+  delay(1000);
+  // Temperatura
+  Serial.println(t);
+  delay(1000);
+  // Indice de calor
+  Serial.println(hic);
+  delay(1000);
+ //  Lluvia
   Serial.println(value,DEC);
+  delay(1000);
 
  
 }
