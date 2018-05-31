@@ -31,7 +31,7 @@ void setup() {
  
 void loop() {
 
-  delay(100000);
+  delay(3000);
  
  // Luz
   value = analogRead(pinLuz);                
